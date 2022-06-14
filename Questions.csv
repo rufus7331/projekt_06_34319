@@ -1,0 +1,15 @@
+"To słowo kluczowe Javy oznacza, że używamy tej metody bez tworzenia obiektu klasy:",public,void,main,static,static
+Który operator służy do porównania dwóch wartości zmiennych prymitywnych?,=,==,!=,=!,==
+Prymitywne typy danych w javie to:,"double, function","int, array","short, boolean","byte, string","short, boolean"
+Służy on do reprezentacji pojedynczych znaków.,int,float,string,char,char
+Jakiego słowa kluczowego używa się przy dziedziczeniu po interfejsach,implements,final,extends,finally,implements
+Typ danych reprezentujący liczby zmiennoprzecinkowe.,int,double,long,byte,double
+"Mamy przykład kodu:
+int i = 11;
+int n = i++%5;
+Jakie są wartości zmiennych po wykonaniu się kodu?","i = 12, n = 1","i = 11, n = 2","i = 11, n = 1","i = 12, n = 2","i = 12, n = 1"
+Która kolekcja nie dziedziczy po interfejsie Collection?,ArrayList,Map i SortedMap,LinkedList,AbstractSet,Map i SortedMap
+"Mamy poniższy łańcuch znakowy
+String marek = ""Czy Marek ma tablet?"";
+Jaką wartość zwróci wyrażenie marek.length()?",18,19,20,21,20
+Jakiego słowa kluczowego używa się przy dziedziczeniu po klasach,implements,final,extends,finally,extends
