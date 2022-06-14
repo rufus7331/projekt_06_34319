@@ -1,0 +1,5 @@
+"Czy string zwrócony przez poniższe wyrażenie to ""i_tablet""?",Prawda,Fałsz,"","",Fałsz
+Który operator służy do porównania dwóch wartości zmiennych prymitywnych?,=,==,!=,=!,==
+Prymitywne typy danych w javie to:,"double, function","int, array","short, boolean","byte, string","short, boolean"
+Zmienna lokalna jest deklarowana wewnątrz metody,Prawda,Fałsz,<null>,<null>,Prawda
+Łańcuchy znakowe są reprezentowane przez klasę java.lang.String,Prawda,Fałsz,<null>,<null>,Prawda

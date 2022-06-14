@@ -30,7 +30,7 @@ public class Question<list> {
 
     @Override
     public String toString() {
-        return "sample.Question{" +
+        return "Question{" +
                 "question='" + question + '\'' +
                 ", option='" + options + '\'' +
                 ", correctAns='" + correctAns + '\'' +
