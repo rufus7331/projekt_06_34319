@@ -116,14 +116,12 @@ public class Controller {
                 rb3.setText("");
                 rb4.setText("");
                 result.setText("Zdobyte punkty: " +score);
-                submitButton.setText("Restart");
+                submitButton.setText("Zakończ");
             }
         }
+
         else {
-            currentQuestion = 0;
-            score = 0;
-            getNextQuestion(questions);
-            submitButton.setText("Następne pytanie");
+            System.exit(0);
         }
         rb1.setSelected(false);
         rb2.setSelected(false);
