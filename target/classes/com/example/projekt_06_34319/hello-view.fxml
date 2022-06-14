@@ -7,21 +7,45 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt_06_34319.Controller">
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt_06_34319.Controller">
     <center>
-        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-            <Label fx:id="questionLabel" text="Label"/>
-            <RadioButton mnemonicParsing="false" text="RadioButton" fx:id="rb1">
+        <VBox prefHeight="384.0" prefWidth="623.0" BorderPane.alignment="CENTER">
+            <Label fx:id="questionLabel" text="Label" wrapText="true">
+            <font>
+               <Font size="24.0" />
+            </font></Label>
+            <RadioButton fx:id="rb1" mnemonicParsing="false" text="RadioButton">
                 <toggleGroup>
-                    <ToggleGroup fx:id="optionsGroup"/>
+                    <ToggleGroup fx:id="optionsGroup" />
                 </toggleGroup>
+            <font>
+               <Font size="18.0" />
+            </font>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" fx:id="rb2"/>
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" fx:id="rb3"/>
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" fx:id="rb4"/>
+            <RadioButton fx:id="rb2" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup">
+            <font>
+               <Font size="18.0" />
+            </font></RadioButton>
+            <RadioButton fx:id="rb3" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup">
+            <font>
+               <Font size="18.0" />
+            </font></RadioButton>
+            <RadioButton fx:id="rb4" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup">
+            <font>
+               <Font size="18.0" />
+            </font></RadioButton>
 
-            <Button mnemonicParsing="false" text="Button" fx:id="submitButton"/>
+            <Button fx:id="submitButton" mnemonicParsing="false" text="Button">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+         <Label fx:id="result" prefHeight="17.0" prefWidth="527.0" text="Label" textAlignment="CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
         </VBox>
     </center>
     <top>
