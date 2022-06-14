@@ -1,12 +1,11 @@
 package com.example.projekt_06_34319;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Question<list> {
-    private String question;
-    private List<String> options;
-    private String correctAns;
+    private final String question;
+    private final List<String> options;
+    private final String correctAns;
 
 
     public Question(String question,  List<String> options, String correctAns) {

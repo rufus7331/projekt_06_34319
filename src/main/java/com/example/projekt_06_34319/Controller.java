@@ -1,5 +1,6 @@
 package com.example.projekt_06_34319;
 
+import com.example.projekt_06_34319.WelcomeView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -7,9 +8,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class Controller {
     public BorderPane pane;
@@ -30,15 +31,25 @@ public class Controller {
     @FXML
     private RadioButton rb4;
     int currentQuestion=0;
+
+    //TODO: Obsługa wysyłania maila z wynikiem
+    //public static int getScore() { return score; }
+
+    int score = 0;
+
+    //String receiver = getReceiver();
+
     @FXML
-    int score =0;
+    private void switchToPrimary() throws IOException {
+        Application.setRoot("primary");
+    }
 
     @FXML
     public void initialize(){
         List<Question> questions = QuestionLoader.loadQuestions("Questions.csv");
         Collections.shuffle(questions);
 
-        questionLabel.setText(((Question)questions.get(currentQuestion)).getQuestion());
+        questionLabel.setText(questions.get(currentQuestion).getQuestion());
         String option1 = (String)questions.get(currentQuestion).getOptions().get(0);
         String option2 = (String)questions.get(currentQuestion).getOptions().get(1);
         String option3 = (String)questions.get(currentQuestion).getOptions().get(2);
@@ -52,17 +63,23 @@ public class Controller {
         result.setText(" ");
 
 
-        submitButton.setOnAction(event -> getNextQuestion(questions));
+        submitButton.setOnAction(event -> {
+            try {
+                getNextQuestion(questions);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
     }
 
-    private void getNextQuestion(List<Question> questions) {
+    private void getNextQuestion(List<Question> questions) throws IOException {
         submitButton.setText("Następne pytanie");
 
 
         if (currentQuestion<questions.size()) {
             String selectedRB = ((RadioButton)optionsGroup.getSelectedToggle()).getText();
-            String correctAnswer = (String)questions.get(currentQuestion).getCorrectAns();
+            String correctAnswer = questions.get(currentQuestion).getCorrectAns();
             if (selectedRB.equals(correctAnswer) ){
                 score++;
                 System.out.println("Poprawna odpowiedź");
@@ -116,10 +133,16 @@ public class Controller {
                 rb3.setText("");
                 rb4.setText("");
                 result.setText("Zdobyte punkty: " +score);
-                submitButton.setText("Restart");
+                submitButton.setText("Zakończ");
+
+                //SendEmail.sendEmail(receiver,"Wynik quizu","Uzyskane punkty: " +score);
             }
         }
         else {
+            //tutaj nowy widok
+            switchToPrimary();
+            //SendEmail.sendEmail(receiver,"Wynik quizu","Uzyskane punkty: " +score);
+            System.out.println("test");
             currentQuestion = 0;
             score = 0;
             getNextQuestion(questions);
