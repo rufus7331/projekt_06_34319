@@ -51,7 +51,7 @@ public class WelcomeView {
 //        boolean result = isValid(email);
 //        if (result == true) {
 //            System.out.println("Provided email address " + email + " is valid \n");
-     )
+//     )
 //        }
 //        else{
 //            System.out.println("Provided email address " + email + " is invalid \n");
